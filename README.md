@@ -1,4 +1,4 @@
-# Flood Prediction Model
+# Deteksi Banjir
 
 This project implements a machine learning model to predict flood probability using linear regression. The model is trained on a dataset containing various features related to flood risk and deployed as a Flask web application for real-time predictions.
 
@@ -38,7 +38,7 @@ The dataset contains numerical features that influence flood probability. Missin
 1. Clone the repository:
    ```bash
    git clone <repository-url>
-   cd flood-prediction
+   cd deteksi-banjir
    ```
 
 2. Create a virtual environment (optional but recommended):
@@ -58,7 +58,7 @@ The dataset contains numerical features that influence flood probability. Missin
 
 Run the main notebook to train the model:
 ```bash
-jupyter notebook main-flood_pred.ipynb
+jupyter notebook Train/main-flood_pred.ipynb
 ```
 
 This notebook performs:
@@ -85,7 +85,7 @@ from flask import Flask, request, jsonify
 import joblib
 
 app = Flask(__name__)
-model = joblib.load('linear_regression_model.joblib')
+model = joblib.load('models/linear_regression_modelV2.joblib')
 
 @app.route('/predict', methods=['POST'])
 def predict():
